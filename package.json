@@ -1,0 +1,17 @@
+{
+  "name": "apigee-test",
+  "description": "Test script for hitting Apigee",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node requestasync.js"
+  },
+  "author": {
+    "name": "Steven Carter",
+    "email": "steve.carter@helloworld.com"
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "node-getopt": "^0.2.3"
+  }
+}
