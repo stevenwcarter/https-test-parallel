@@ -1,6 +1,6 @@
 {
-  "name": "apigee-test",
-  "description": "Test script for hitting Apigee",
+  "name": "https-test-parallel",
+  "description": "Test script for hitting an HTTPS endpoint in parallel",
   "version": "0.1.0",
   "private": true,
   "scripts": {
