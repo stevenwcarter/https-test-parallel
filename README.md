@@ -13,4 +13,4 @@ Create a config.json file like the following:
 }
 ```
 
-Then create a getItems.xml file that contains the data for the post.
+Then create a getItems.xml file in the templates directory that contains the data for the post.
