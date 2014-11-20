@@ -8,6 +8,7 @@ var opt = require('node-getopt').create([
   ['z', 'compression', 'Enable compression'],
   ['v', 'verbose', 'Show each line'],
   ['c', 'threads=ARG', 'Number of threads'],
+  ['t', 'template=ARG', 'Template name to send'],
   ['n', 'requests=ARG', 'Number of requests per thread'],
   ['h', 'help',        'Display this help' ]
 ])
@@ -22,6 +23,14 @@ var options = opt.options;
 var compression = (options.compression || options.z);
 var keepalive = (options['keep-alive'] || options.k);
 var verbose = (options.verbose || options.v);
+var template = 'getItems.xml';
+
+if (typeof options.t !== 'undefined') {
+    template = options.t;
+}
+if (typeof options.template !== 'undefined') {
+    template = options.template;
+}
 
 if (typeof compression === 'undefined') {
   compression = false;
@@ -57,6 +66,7 @@ if (typeof options.requests !== 'undefined') {
   } catch (e) {}
 }
 
+console.log("Template    : "+template);
 console.log("Keep-Alive  : "+keepalive);
 console.log("Compression : "+compression);
 console.log("Verbose     : "+verbose);
@@ -73,7 +83,7 @@ var stats = {};
 var host = config.host;
 var port = config.port;
 var path = config.path;
-var payload = fs.readFileSync('getItems.xml');
+var payload = fs.readFileSync('templates/'+template);
  
 var calls = [];
 var clients = threads;
